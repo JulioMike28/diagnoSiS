@@ -1,0 +1,56 @@
+body{
+    height: 100%;
+    background-color: #ffffff;
+    background-image:  -moz-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35));
+    background-image:  -webkit-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35));
+    background-image:  -ms-linear-gradient(60deg, rgba(255, 255, 255, 0.5) 10%, rgba(180, 191, 197, 0.35));
+    background-image:  linear-gradient(60deg, rgba(255, 255, 255, 0.5) 10%, rgba(180, 191, 197, 0.35));
+}
+.fundo{
+    position: absolute;
+    right: 0;
+    top:0;
+}
+.btnHome:hover{
+    cursor: pointer;
+    color: #aaffee;
+    box-shadow: 2px 6px gainsboro;
+}
+.header{
+    background: linear-gradient(to right, #afeeee, midnightblue);
+    color:#fff;
+    padding:0.5rem;
+    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 60px;
+    align-items: center;
+}
+input[type='file'] {
+    display: none
+}
+.labelFile{
+    background-color: #11164D;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    align-items: center;
+    text-align: center;
+    padding: 6px 20px;
+    width: 100%;
+    height: 60px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.fechar{
+    position: absolute;
+    width: 30px;
+    right: 20px;
+    top:10px;
+    text-align: center;
+    line-height: 30px;
+    margin-top:5px ;
+    background: #ff4545;
+    border-radius: 50%;
+    font-size:16px;
+    color:#fff;
+}
