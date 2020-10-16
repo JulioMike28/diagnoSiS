@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+<div class="row">
+    <div class="col-md-5">
+        <div style="margin:40px; border: 3px solid #4085F0; border-radius: 6px; padding: 10px; width: 100%;">
+            <label for="nome">Nome do Paciente</label>
+            <input type="text" style="background: #4085F0; color: #fff;"class="form-control" id="nome" >
+            <br>
+            <label for="data">Data de Nascimento</label>
+            <input type="date" style="background: #4085F0; color: #fff;"class="form-control" id="data" >
+            <br>
+            <label for="cpf">CPF</label>
+            <input type="text" style="background: #4085F0; color: #fff;"class="form-control" id="cpf" >
+            
+        </div>
+        <div style="margin-left: 40px; width: 100%;">
+            <p style="font-family: Droid Sans; font-size: 20px; font-weight: bold;">Radiografia:</p>
+            <label class="labelFile" for="select">Carregar Imagem:</label>
+            <input type="file" id="select" (change)="onFileSelected($event)"/>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <div style="margin-left:40px; margin-top: 20px; margin-right: 20px;align-content: center; border: 3px solid gray; border-radius: 6px; height: 80%; text-align: center; align-items: center;">
+            <div *ngIf="img; else elseBlock" style="margin-top: 20px;"><img src={{img}} alt="image" width="50%"/></div>
+            <ng-template #elseBlock > <p style="margin: 100px; font-family: Droid Sans; font-size: 20px; font-weight: bold; color: gray;">Sem Imagem carregada.<p> </ng-template>
+        </div>
+        <div style="margin-top: 20px; margin-left: 40px; margin-right: 20px;  height: 20%;">
+            <button style="margin-left: 30px; margin-top:15px; margin-right: 100px; width: 50%; height: 60%; font-size: 30px; font-weight: bold;" class="btn btn-danger" (click)="modalService.open('modal-2');">Iniciar </button>
+            <!--Modal-->
+            <jw-modal id="modal-2">
+                <app-resultado></app-resultado>
+                <p><button class="fechar" (click)="modalService.close('modal-2')">X</button></p>
+            </jw-modal>
+            <!--<ng-template #modalResultado let-modal style="width: 800px;">
+                <div class="modal-header" style="background: linear-gradient(to right, #afeeee, midnightblue);">
+                    <h4 class="modal-title" id="modal-basic-title" style="color: #fff;">Resultado</h4>
+                    <a class="fechar" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                     <span aria-hidden="true">×</span>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+                </div>
+           </ng-template>-->
+            <circle-progress
+            [percent]="75"
+            [radius]="50"
+            [outerStrokeWidth]="8"
+            [innerStrokeWidth]="4"
+            [outerStrokeColor]="'#afeeee'"
+            [outerStrokeGradient]=true 
+            [outerStrokeGradientStopColor]="'#11164D'"
+            [innerStrokeColor]="'#afeeee'"
+            [animation]="true"
+            [animationDuration]="1000"
+            ></circle-progress>
+        </div>
+    </div>
+    
+
+</div>
+
